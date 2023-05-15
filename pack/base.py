@@ -4,7 +4,6 @@ import pygame
 import numpy as np
 from extractor import Extractor
 # receiving the input from the user 
-
 W = 1920//2 
 H = 1080//2
 disp   = Display(W,H)
@@ -17,9 +16,8 @@ def process(frame:object) -> object:
     if matches is not None: 
         disp.draw(frame)
 
-if __name__ == "__main__":
-    input = input("enter the number video here: ")
-    video = cv.VideoCapture(f"library/road-video{input}.mp4")
+def main(video):
+    video = cv.VideoCapture(f"library/road-video{video}.mp4")
     while video.isOpened():
         ret, frame = video.read()
         if ret == True:
@@ -27,3 +25,6 @@ if __name__ == "__main__":
         else:
             exit()
 
+if __name__ == "__main__":
+    video = input("enter a number from 1 to 4:")
+    main(video)
