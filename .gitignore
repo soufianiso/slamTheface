@@ -2,5 +2,5 @@ venv
 __pycache__
 cv2
 pygame
-pack/library
-pack/cv2
+media
+lib/cv2

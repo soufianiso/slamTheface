@@ -1,8 +1,8 @@
 import cv2 as cv 
-from display import Display 
+from lib.display import Display 
+from lib.extractor import Extractor
 import pygame
 import numpy as np
-from extractor import Extractor
 # receiving the input from the user 
 W = 1920//2 
 H = 1080//2
@@ -17,7 +17,7 @@ def process(frame:object) -> object:
         disp.draw(frame)
 
 def main(video):
-    video = cv.VideoCapture(f"library/road-video{video}.mp4")
+    video = cv.VideoCapture(f"media/road-video{video}.mp4")
     while video.isOpened():
         ret, frame = video.read()
         if ret == True:
